@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "326989790798",
+    "project_id": "elaniintest-390af",
+    "storage_bucket": "elaniintest-390af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326989790798:android:5e9603192b59b4d24acd1f",
+        "android_client_info": {
+          "package_name": "com.samioff15.elaniinTest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326989790798-cn1co8fjenujjvq2g28opos3scma6c44.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.samioff15.elaniinTest",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "326989790798-9clf9ino48cojttombnqi8qb214hjtqh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQkZJUWQXq6cnXNz6nz5d2tH10-hOIPAk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326989790798-9clf9ino48cojttombnqi8qb214hjtqh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "326989790798-tn0vkdaa4t9q8ng7trlbjl97i6gpubcb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.company.elaniintest"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
