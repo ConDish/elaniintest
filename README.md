@@ -23,3 +23,20 @@
 - [Nativebase](https://nativebase.io/)
 - [Zod](https://zod.dev/)
 - [FlashList](https://shopify.github.io/flash-list/docs)
+
+## Folder Structure
+
+### Src
+The main container of the application
+
+### Features
+Inside this folder you will find all the features of the application
+
+### Navigation
+The main navigation
+
+### Theme
+Custom theme of all application
+
+### Types
+Main types of the app core
