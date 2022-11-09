@@ -27,16 +27,21 @@
 ## Folder Structure
 
 ### Src
+
 The main container of the application
 
 ### Features
-Inside this folder you will find all the features of the application
+
+Inside this folder you will find all the features of the application also you could see `containers`, `components`, `screens`, `types`, `hooks`, `constants`
 
 ### Navigation
+
 The main navigation
 
 ### Theme
+
 Custom theme of all application
 
 ### Types
+
 Main types of the app core
