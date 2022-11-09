@@ -3,6 +3,7 @@ import auth from '@react-native-firebase/auth';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import { CLIENT_ID } from '@env';
 import { useNavigation } from '@react-navigation/native';
+import crashlytics from '@react-native-firebase/crashlytics';
 
 import type { ScreenNavigationProp } from '@app-types';
 
@@ -21,7 +22,7 @@ const LoginContainer = () => {
 			auth().signInWithCredential(googleCredential);
 			navigation.navigate('Dashboard');
 		} catch (error) {
-			console.log(error);
+			crashlytics().recordError(error as Error);
 		}
 	};
 

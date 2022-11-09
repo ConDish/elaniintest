@@ -2,6 +2,8 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import type { Pokemon } from '../types';
+import crashlytics from '@react-native-firebase/crashlytics';
+
 
 export const useGetPokemonByRegion = (url: string | undefined) => {
 	const [pokemons, setPokemons] = useState<Pokemon[]>([]);
@@ -21,6 +23,7 @@ export const useGetPokemonByRegion = (url: string | undefined) => {
 			setPokemons(pokedex.pokemon_entries);
 		} catch (error) {
 			setIsError(error);
+			crashlytics().recordError(error as Error);
 		}
 		setIsLoading(false);
 	};
