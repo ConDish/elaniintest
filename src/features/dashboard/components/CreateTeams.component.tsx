@@ -1,8 +1,7 @@
-import { ScrollView, Input, FormControl, Select, TextArea, Button, Box } from 'native-base';
+import { Input, FormControl, Select, TextArea, Button, Box } from 'native-base';
 import { Controller, UseFormReturn } from 'react-hook-form';
-
 import { form, formKeys } from '../constants';
-import type { CreateTeamsFormValues, Pokemon, Regions } from '../types';
+import type { CreateTeamsFormValues, Regions } from '../types';
 
 type Props = {
 	control: UseFormReturn<CreateTeamsFormValues>['control'];
