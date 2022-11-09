@@ -1,4 +1,4 @@
-import { ScrollView, Input, FormControl, Select, TextArea, Button, Box, FlatList, Text, Checkbox } from 'native-base';
+import { ScrollView, Input, FormControl, Select, TextArea, Button, Box } from 'native-base';
 import { Controller, UseFormReturn } from 'react-hook-form';
 
 import { form, formKeys } from '../constants';
