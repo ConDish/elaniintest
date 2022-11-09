@@ -28,7 +28,22 @@ export const theme = extendTheme({
 	components: {
 		Button: {
 			defaultProps: {
-				colorScheme: 'coolGray',
+				colorScheme: 'danger',
+			},
+		},
+		Input: {
+			baseStyle: {
+				_focus: {
+					backgroundColor: 'white',
+				},
+			},
+		},
+		Pressable: {
+			defaultProps: {
+				android_ripple: {
+					borderless: true,
+					radius: 30,
+				},
 			},
 		},
 	},

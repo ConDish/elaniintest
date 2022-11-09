@@ -22,6 +22,7 @@ const CreateTeamsComponent = ({ control, regions, onSelectedRegion, onNext }: Pr
 						<Input
 							placeholder={form.createTeams.placeholder[formKeys.createTeams.name]}
 							onChangeText={(value) => onChange(value)}
+							bg="white"
 							onBlur={onBlur}
 							value={value}
 							size="lg"
@@ -40,6 +41,7 @@ const CreateTeamsComponent = ({ control, regions, onSelectedRegion, onNext }: Pr
 								onChange(regionValue);
 								onSelectedRegion(regions.filter((region) => region.name === regionValue)[0].url);
 							}}
+							bg="white"
 							mt="3"
 							size="lg"
 							defaultValue={value}
@@ -61,6 +63,7 @@ const CreateTeamsComponent = ({ control, regions, onSelectedRegion, onNext }: Pr
 							onValueChange={onChange}
 							defaultValue={value}
 							mt="3"
+							bg="white"
 							size="lg"
 							placeholder={form.createTeams.placeholder[formKeys.createTeams.type]}>
 							<Select.Item label="Mystic" value="mystic" />
@@ -85,6 +88,7 @@ const CreateTeamsComponent = ({ control, regions, onSelectedRegion, onNext }: Pr
 							value={value}
 							size="lg"
 							mt="3"
+							bg="white"
 						/>
 						<FormControl.ErrorMessage>{error?.message}</FormControl.ErrorMessage>
 					</FormControl>

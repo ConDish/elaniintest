@@ -3,7 +3,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { useCallback } from 'react';
 import { useRef, useState } from 'react';
 import database from '@react-native-firebase/database';
-import type { CreateTeamsFormValues, Pokemon } from '../types';
+import type { CreateTeamsFormValues, Pokemon, TeamResponse } from '../types';
 import type { ScreenNavigationProp } from '@app-types';
 
 const MIN_SELECTED_POKEMONS = 3;
@@ -11,7 +11,12 @@ const MAX_SELECTED_POKEMONS = 6;
 
 const ChoosePokemonContainer = () => {
 	const navigation = useNavigation<ScreenNavigationProp<'ChoosePokemon'>>();
-	const { pokemons, dataTeam } = useRoute().params as { pokemons: Pokemon[]; dataTeam: CreateTeamsFormValues };
+	const { pokemons, dataTeam, isUpdate, team } = useRoute().params as {
+		pokemons: Pokemon[];
+		dataTeam: CreateTeamsFormValues;
+		isUpdate: boolean;
+		team: TeamResponse;
+	};
 	const selectedPokemons = useRef<Set<Pokemon>>(new Set());
 	const [error, setError] = useState<string | undefined>(undefined);
 
@@ -35,13 +40,21 @@ const ChoosePokemonContainer = () => {
 				return;
 			}
 			const selecteds = [...selectedPokemons.current];
-			database()
-				.ref('/teams')
-				.push()
-				.set({
+			if (isUpdate) {
+				database().ref('/teams').child(team.id).update({
+					name: dataTeam.name,
+					pokedexDescription: dataTeam.pokedexDescription,
+					type: dataTeam.type,
+					pokemons: selecteds,
+				});
+			} else {
+				const reference = database().ref('/teams').push();
+				reference.set({
+					id: reference.key,
 					pokemons: selecteds,
 					...dataTeam,
 				});
+			}
 			navigation.navigate('Home');
 			setError(undefined);
 		} catch (error) {
@@ -49,7 +62,16 @@ const ChoosePokemonContainer = () => {
 		}
 	}, []);
 
-	return <ChoosePokemonComponent pokemons={pokemons} onSelectedPokemon={onSelectedPokemon} onSubmit={onSubmit} error={error} />;
+	return (
+		<ChoosePokemonComponent
+			pokemons={pokemons}
+			onSelectedPokemon={onSelectedPokemon}
+			onSubmit={onSubmit}
+			error={error}
+			selectedPokemons={selectedPokemons.current}
+			isUpdate={isUpdate}
+		/>
+	);
 };
 
 export default ChoosePokemonContainer;

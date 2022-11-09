@@ -14,4 +14,13 @@ export type Pokemon = {
     };
 }
 
+export type TeamResponse = {
+    id: string;
+    name: string;
+    type: string;
+    region: string;
+    pokemons: Pokemon[];
+    pokedexDescription: string;
+}
+
 export type CreateTeamsFormValues = z.infer<typeof form.createTeams.schema>;

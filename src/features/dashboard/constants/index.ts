@@ -25,9 +25,9 @@ export const form = {
         },
 		schema: z.object({
 			[formKeys.createTeams.name]: z.string({ required_error: 'Name is required' }).min(1),
-			[formKeys.createTeams.type]: z.string({ required_error: 'Name is required' }).min(1),
-			[formKeys.createTeams.region]: z.string({ required_error: 'Name is required' }).min(1),
-			[formKeys.createTeams.pokedexDescription]: z.string({ required_error: 'Name is required' }).min(1),
+			[formKeys.createTeams.type]: z.string({ required_error: 'Type is required' }).min(1),
+			[formKeys.createTeams.region]: z.string({ required_error: 'Region is required' }).min(1),
+			[formKeys.createTeams.pokedexDescription]: z.string({ required_error: 'Description is required' }).min(1),
 		}),
 	},
 };

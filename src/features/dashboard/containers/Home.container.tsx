@@ -1,5 +1,5 @@
 import HomeComponent from '@features/dashboard/components/Home.component';
-import { Pressable, Text, Box, Icon } from 'native-base';
+import { Box, Icon, Image, Pressable } from 'native-base';
 import { Ionicons } from '@expo/vector-icons';
 import { useGetRegions } from '../hooks/useGetRegions';
 import { useNavigation } from '@react-navigation/native';
@@ -21,12 +21,19 @@ const HomeContainer = () => {
 		navigation.navigate('Login');
 	};
 
-	if (isError) return;
+	if (isError) return <Box />;
 	return (
 		<>
-			<Box justifyContent="flex-end" p="3" alignItems="center" flexDirection="row">
-				<Icon as={Ionicons} name="person-add-outline" size="lg" color="black" mr="5" onPress={onCreateTeams} />
-				<Icon as={Ionicons} name="log-out-outline" size="lg" color="black" onPress={onLogout} />
+			<Box flexDirection="row" p="2">
+				<Image source={{ uri: 'https://i.gifer.com/2iiJ.gif' }} resizeMode="contain" size={10} alt="pokemon_running" />
+				<Box flex="1" justifyContent="flex-end" p="3" alignItems="center" flexDirection="row">
+					<Pressable onPress={onCreateTeams} mr="5">
+						<Icon as={Ionicons} name="person-add-outline" size="lg" color="white" />
+					</Pressable>
+					<Pressable onPress={onLogout}>
+						<Icon as={Ionicons} name="log-out-outline" size="lg" color="white" />
+					</Pressable>
+				</Box>
 			</Box>
 			<HomeComponent regions={regions} onPress={onPress} />
 		</>

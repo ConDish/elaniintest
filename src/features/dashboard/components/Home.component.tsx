@@ -9,7 +9,7 @@ type Props = {
 const HomeComponent = ({ regions, onPress }: Props) => {
 	const renderItem = ({ item }: { item: Regions }) => {
 		return (
-			<Pressable onPress={onPress} padding="5" alignItems="center" mt="1" bg="gray.300" justifyContent="center">
+			<Pressable onPress={onPress} padding="5" alignItems="center" mt="1" bg="white" justifyContent="center">
 				<Text fontSize="md">{item.name}</Text>
 			</Pressable>
 		);

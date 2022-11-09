@@ -13,7 +13,6 @@ export const useGetPokemonByRegion = (url: string | undefined) => {
 	}, []);
 
 	const getPokemonByRegion = async (url: string) => {
-		console.log(url);
 		try {
 			const { data: region } = await axios(url);
 			if (!region) return;
