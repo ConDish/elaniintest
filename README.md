@@ -7,6 +7,7 @@
 - `yarn`
 - `yarn android` If you want to run in android
 - `yarn ios` If you want to run in ios
+- In the `.env` file are the environment variables
 
 ## Requirements
 
