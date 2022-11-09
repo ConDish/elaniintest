@@ -1,4 +1,4 @@
-import { Box, Text, Divider, FlatList, Image, Icon, Pressable } from 'native-base';
+import { Box, Text, FlatList, Image, Icon, Pressable } from 'native-base';
 import type { TeamResponse } from '../types';
 import { Ionicons } from '@expo/vector-icons';
 
