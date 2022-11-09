@@ -3,7 +3,6 @@ import { createNativeStackNavigator, NativeStackNavigationOptions } from '@react
 import { RootStackParamList } from '@app-types';
 import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
 import { useEffect, useState } from 'react';
-import * as SplashScreen from 'expo-splash-screen';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
