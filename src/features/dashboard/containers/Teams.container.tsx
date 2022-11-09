@@ -18,7 +18,6 @@ const TeamsContainer = () => {
 			</Box>
 		);
 	}
-	console.log(teamsData);
 	return <TeamsComponent teamsData={teamsData} onDelete={onDelete} onEdit={onEdit} />;
 };
 

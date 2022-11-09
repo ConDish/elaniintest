@@ -9,9 +9,7 @@ import type { ScreenNavigationProp } from '@app-types';
 const HomeContainer = () => {
 	const navigation = useNavigation<ScreenNavigationProp<'Home'>>();
 	const { regions, isError } = useGetRegions();
-	const onPress = () => {
-		console.log('Pressed');
-	};
+	const onPress = () => {};
 	const onCreateTeams = () => {
 		navigation.navigate('CreateTeams');
 	};

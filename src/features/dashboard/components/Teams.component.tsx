@@ -51,7 +51,7 @@ const TeamsComponent = ({ teamsData, onDelete, onEdit }: Props) => {
 						</Pressable>
 					</Box>
 				</Box>
-				<Box flexDir="row">
+				<Box flexDir="row" flexWrap="wrap">
 					{item.pokemons.map((pokemon) => (
 						<Image
 							key={pokemon.entry_number}
@@ -70,7 +70,6 @@ const TeamsComponent = ({ teamsData, onDelete, onEdit }: Props) => {
 	return (
 		<FlatList<TeamResponse>
 			contentContainerStyle={{
-				flex: 1,
 				padding: 10,
 			}}
 			data={teamsData.reverse()}
