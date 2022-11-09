@@ -9,6 +9,16 @@
 - `yarn ios` If you want to run in ios
 - In the `.env` file are the environment variables
 
+### To create Team
+![image](https://user-images.githubusercontent.com/29387286/200919815-bfefe6a5-128d-4ae8-8149-0df221e87018.png)
+
+### To log out
+![image](https://user-images.githubusercontent.com/29387286/200919912-c074c18a-9653-40cf-b77f-c0b766f601de.png)
+
+### To see all existing team
+![image](https://user-images.githubusercontent.com/29387286/200920037-4c9a2412-a13f-4b84-a7f9-eaccf291d8dd.png)
+
+
 ## Requirements
 
 - [Node.js](https://nodejs.org)
