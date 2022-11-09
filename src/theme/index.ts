@@ -24,4 +24,12 @@ export const theme = extendTheme({
 		body: 'Poppins',
 		mono: 'Poppins',
 	},
+
+	components: {
+		Button: {
+			defaultProps: {
+				colorScheme: 'coolGray',
+			},
+		},
+	},
 });

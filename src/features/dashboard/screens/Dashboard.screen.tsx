@@ -5,7 +5,9 @@ import type { RootStackParamList } from '@app-types';
 const Tab = createMaterialBottomTabNavigator<RootStackParamList>();
 
 const DashboardScreen = () => (
-	<Tab.Navigator labeled={false}>
+	<Tab.Navigator labeled={false} barStyle={{
+        backgroundColor: '#000',
+    }}>
 		<Tab.Screen
 			options={{
 				tabBarIcon: 'home',
@@ -13,13 +15,15 @@ const DashboardScreen = () => (
 			name="Home"
 			getComponent={() => require('@features/dashboard/screens/Home.screen').default}
 		/>
+
 		<Tab.Screen
 			options={{
-				tabBarIcon: 'account-plus',
+				tabBarIcon: 'account',
 			}}
-			name="CreateTeams"
-			getComponent={() => require('@features/dashboard/screens/CreateTeams.screen').default}
+			name="Teams"
+			getComponent={() => require('@features/dashboard/screens/Teams.screen').default}
 		/>
+
 	</Tab.Navigator>
 );
 

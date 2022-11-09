@@ -14,8 +14,9 @@ const CreateTeamsContainer = () => {
 	const navigation = useNavigation<ScreenNavigationProp<'CreateTeams'>>();
 	const { regions, isError } = useGetRegions();
 	const { pokemons, isError: isErrorPokemon, getPokemonByRegion } = useGetPokemonByRegion(undefined);
-	const { control } = useForm<CreateTeamsFormValues>({
+	const { control, handleSubmit } = useForm<CreateTeamsFormValues>({
 		resolver: zodResolver(form.createTeams.schema),
+        defaultValues: form.createTeams.initialValues,
 	});
 
 	const onSelectedRegion = (region: string) => {
@@ -23,12 +24,14 @@ const CreateTeamsContainer = () => {
 		getPokemonByRegion(region);
 	};
 
-	const onNext = () => {
-		navigation.navigate('ChoosePokemon', { pokemons });
+	const onNext = (dataTeam: CreateTeamsFormValues) => {
+		navigation.navigate('ChoosePokemon', { pokemons, dataTeam });
 	};
 
 	if (isError) return <Box />;
-	return <CreateTeamsComponent control={control} regions={regions} onSelectedRegion={onSelectedRegion} onNext={onNext} />;
+	return (
+		<CreateTeamsComponent control={control} regions={regions} onSelectedRegion={onSelectedRegion} onNext={handleSubmit(onNext)} />
+	);
 };
 
 export default CreateTeamsContainer;

@@ -18,6 +18,11 @@ export const form = {
 			pokedexDescription: 'Pokedex description',
 			
 		},
+        initialValues: {
+            name: __DEV__ ? 'Test' : '',
+            type: __DEV__ ? 'mystic' : '',
+            pokedexDescription: __DEV__ ? 'lorem' : '',
+        },
 		schema: z.object({
 			[formKeys.createTeams.name]: z.string({ required_error: 'Name is required' }).min(1),
 			[formKeys.createTeams.type]: z.string({ required_error: 'Name is required' }).min(1),

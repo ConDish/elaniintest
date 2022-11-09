@@ -2198,6 +2198,11 @@
     "@expo/config-plugins" "^5.0.1"
     plist "^3.0.5"
 
+"@react-native-firebase/database@^16.4.3":
+  version "16.4.3"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/database/-/database-16.4.3.tgz#01aba6807c15df0748cfbf483d0ed5978c477ff2"
+  integrity sha512-rTfGIzk04It9MB8Y2+CCpioeV4QHPCi9k11H+lhCGjVy7+nTzZyjfG17sXjdbxfYeGLipuFt2r7Kozqv920HXw==
+
 "@react-native-google-signin/google-signin@^8.2.1":
   version "8.2.1"
   resolved "https://registry.yarnpkg.com/@react-native-google-signin/google-signin/-/google-signin-8.2.1.tgz#a37362e630302da9ff820895ab8cf32acedd66dc"

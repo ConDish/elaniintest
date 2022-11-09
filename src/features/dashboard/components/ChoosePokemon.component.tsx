@@ -5,32 +5,27 @@ import { useState, memo, useCallback } from 'react';
 
 type Props = {
 	pokemons: Pokemon[];
-    onSelectedPokemon: (pokemon: Pokemon) => void;
-    onSubmit: () => void;
-    error?: string;
+	onSelectedPokemon: (pokemon: Pokemon) => void;
+	onSubmit: () => void;
+	error?: string;
 };
 
 type ItemProps = {
 	item: Pokemon;
-    onSelectedPokemon: (pokemon: Pokemon) => void;
+	onSelectedPokemon: (pokemon: Pokemon) => void;
 };
 
 const Item = memo(({ item, onSelectedPokemon }: ItemProps) => {
 	const [isChecked, setIsChecked] = useState<boolean>(false);
-    const onPress = useCallback(() => {
-        setIsChecked((prev)=>!prev);
-        onSelectedPokemon(item);
-    },[onSelectedPokemon]);
+	const onPress = useCallback(() => {
+		setIsChecked((prev) => !prev);
+		onSelectedPokemon(item);
+	}, [onSelectedPokemon]);
 
 	return (
 		<Box flex="1" justifyContent="center" m="5" alignItems="center">
 			<Text fontSize="md">{item.pokemon_species.name}</Text>
-			<Checkbox
-				accessibilityLabel="Select pokemon"
-				value="pokemon"
-				isChecked={isChecked}
-				onChange={onPress}
-			/>
+			<Checkbox accessibilityLabel="Select pokemon" value="pokemon" isChecked={isChecked} onChange={onPress} />
 		</Box>
 	);
 });
@@ -48,7 +43,9 @@ const ChoosePokemonComponent = ({ pokemons, onSelectedPokemon, onSubmit, error }
 				estimatedItemSize={30}
 				keyExtractor={(item) => item.entry_number.toString()}
 			/>
-            <Text fontSize="md" color="red.600" textAlign="center">{error}</Text>
+			<Text fontSize="md" color="red.600" textAlign="center">
+				{error}
+			</Text>
 			<Button onPress={onSubmit}>Submit</Button>
 		</>
 	);
