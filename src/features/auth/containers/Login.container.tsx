@@ -1,6 +1,6 @@
 import LoginComponent from '@features/auth/components/Login.component';
 import auth from '@react-native-firebase/auth';
-import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import { CLIENT_ID } from '@env';
 import { useNavigation } from '@react-navigation/native';
 
